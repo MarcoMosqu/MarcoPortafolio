@@ -52,29 +52,7 @@ body {
 /* =============================
    Main Content Container
 ============================= */
-.content-wrapper {
-  margin: auto;
-  width: 80%;
-  max-width: 1000px;
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  padding: 60px;
-  border-radius: 25px;
-  color: white;
-  margin-top: 140px; /* spacing below navbar */
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-  font-size: 1.2rem;
-}
 
-/* Make text bigger inside */
-.content-wrapper h1 {
-  font-size: 2.4rem;
-}
-
-.content-wrapper p {
-  line-height: 1.8;
-  font-size: 1.25rem;
-}
 
 /* =============================
    Footer
@@ -92,53 +70,55 @@ footer {
 /* =============================
    Responsive Design
 ============================= */
-@media (max-width: 900px) {
-  .content-wrapper {
-    width: 90%;
-    padding: 40px;
-  }
-}
 
-@media (max-width: 600px) {
-  .navbar {
-    justify-content: space-between;
-    padding: 10px 20px;
-  }
-
-  .navbar a {
-    font-size: 16px;
-  }
-
-  
-}
-/* Geometric diagonal background */
-.geo-section {
+.envelope-container {
   position: relative;
-  padding: 120px 20px;
-  background: #4f46e5;
+  width: 90%;
+  min-height: 380px; /* bigger */
+  margin: 80px auto;
+  padding: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  backdrop-filter: blur(12px);
+  overflow: hidden;
   color: white;
-
-  /* Geometric diagonal shape */
-  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
 }
 
-/* Content inside the geometric shape */
-.geo-content {
-  max-width: 700px;
-  margin: auto;
-  text-align: center;
-  padding: 40px;
-}
-
-/* Optional smooth shadow effect */
-.geo-section::after {
+/* Top-left → center diagonal */
+.envelope-container::before {
   content: "";
   position: absolute;
-  bottom: -40px;
-  left: 0;
-  width: 100%;
-  height: 40px;
-  background: #4f46e5;
-  filter: blur(40px);
-  opacity: 0.4;
+  left: 20%;
+  top: 0;
+  width: 2px;
+  height: 70%; /* stops at the center */
+  background: linear-gradient(
+    to bottom right,
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,0)
+  );
+  transform-origin: top;
+  transform: rotate(-45deg);
+}
+
+/* Bottom-left → center diagonal */
+.envelope-container::after {
+  content: "";
+  position: absolute;
+  left: 20%;
+  bottom: 0;
+  width: 2px;
+  height: 70%; /* stops at the center */
+  background: linear-gradient(
+    to top right,
+    rgba(255,255,255,0.6),
+    rgba(255,255,255,0)
+  );
+  transform-origin: bottom;
+  transform: rotate(45deg);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
 }
