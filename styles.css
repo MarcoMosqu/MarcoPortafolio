@@ -75,7 +75,7 @@ body {
 }
 
 
-/* Envelope decorative diagonal lines */
+/* Envelope decorative diagonal lines 
 .envelope-container::before,
 .envelope-container::after {
   content: "";
@@ -117,6 +117,7 @@ body {
   flex-direction: column;
   justify-content: center;
   gap: 15px;
+  
 }
 
 .about-info h2 {
@@ -137,14 +138,15 @@ body {
   height: 300px;
   background: transparent;
   overflow: hidden;
-  
+  padding: 0%;
+  margin: 0%;
 }
 
 /* base word style */
 .word {
   position: absolute;
   top: -40px;
-  left: 50%;                 /* <- move to center */
+  left: 35%;                 /* <- move to center */
   transform: translateX(-50%); /* <- correct offset */
   font-size: 1.8rem;
   font-family: monospace;
@@ -266,23 +268,22 @@ footer {
               0 0 25px rgba(0, 245, 212, 0.2);
   border-radius: 12px; 
 }
+
 /* =======Contact Section ========  */
 /* CONTACT FORMS WRAPPER */
 .envelope-contact {
   position: relative;
   width: 90%;
-  margin: 120px auto;
-  padding: 10px;
+  margin: 60px auto;
+  padding: 5px;
   border: 1px solid rgba(255,255,255,0.08);
   background: linear-gradient(145deg, #1a1a1d, #2a2a32);
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr ;
   gap: 30px;
   backdrop-filter: blur(12px);
   overflow: hidden;
-  color: white;
-  align-items: stretch; /* NEW */
-   min-height: 420px;
+   min-height: auto;
   box-shadow: 0 0 25px rgba(255, 0, 140, 0.2),
               0 0 25px rgba(0, 245, 212, 0.2);
   border-radius: 12px; 
@@ -311,6 +312,8 @@ footer {
   color: #00f5d4;
   text-shadow: 0 0 8px rgba(0, 245, 212, 0.5);
   font-weight: bold;
+  text-align: center; /* centers the heading */
+  margin-bottom: 15px; /* optional: control spacing below */
 }
 
 /* LABELS */
@@ -351,10 +354,203 @@ footer {
   height: 90px;
   resize: none;
 }
+/* Center submit button inside form */
+.form-submit {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  margin-top: 20px;
+}
+
+/* Style the submit button */
+.form-submit button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(45deg, #00f5d4, #00bbf9);
+  color: #000;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-submit button:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 0 15px #00f5d4;
+}
+
 
 /* MOBILE */
 @media (max-width: 900px) {
   .contact-forms {
     gap: 40px;
+  }
+}
+/* =============================
+   EXPERIENCE ENVELOPE
+============================= */
+.envelope-experience {
+  position: relative;
+  width: 90%;
+  margin: 120px auto;
+  padding: 20px;
+  min-height: 420px;
+  background: linear-gradient(145deg, #1a1a1d, #2a2a32);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 25px rgba(255, 0, 140, 0.2),
+              0 0 25px rgba(0, 245, 212, 0.2);
+  color: white;
+}
+
+/* MAIN LAYOUT */
+.experience-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 100%;
+  gap: 30px;
+}
+
+/* LEFT IMAGE */
+.experience-image {
+  background: url("https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80")
+              center/cover no-repeat;
+  border-radius: 10px;
+  height: 100%;
+}
+
+/* RIGHT CONTENT */
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* TEXT BLOCK (75% HEIGHT) */
+.experience-text {
+  flex: 0 0 75%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ACTION BUTTONS */
+.experience-actions {
+  display: flex;
+  justify-content: center; /* CENTER horizontally */
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+/* CTA BUTTON BASE */
+/* BIG IMAGE CTA BUTTON */
+.cta-btn {
+  width: 220px;
+  height: 90px;
+  border-radius: 18px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  position: relative;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* GLOW HOVER */
+.cta-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 245, 212, 0.6);
+}
+
+
+/* PRIMARY BUTTON */
+.cta-btn.primary {
+  background: linear-gradient(45deg, #00f5d4, #00bbf9);
+  color: #000;
+}
+
+.cta-btn.primary:hover {
+  box-shadow: 0 0 15px #00f5d4;
+  transform: translateY(-2px);
+}
+
+/* SECONDARY BUTTON */
+.cta-btn.secondary {
+  border: 2px solid #ff008c;
+  color: #ff008c;
+}
+.projects-intro {
+  text-align: center;
+  font-size: 1.05rem;
+  margin: 25px 0 15px;
+  color: #c9fff2;
+  letter-spacing: 0.4px;
+  text-shadow: 0 0 8px rgba(0, 245, 212, 0.35);
+}
+
+
+.cta-btn.secondary:hover {
+  background: #ff008c;
+  color: #000;
+  box-shadow: 0 0 15px #ff008c;
+}
+.cta-btn.primary {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085");
+}
+
+.cta-btn.secondary {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("https://images.unsplash.com/photo-1515879218367-8466d910aaa4");
+}
+
+.cta-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  border: 2px solid rgba(255,255,255,0.35);
+  pointer-events: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .experience-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-image {
+    height: 220px;
+  }
+
+  .experience-text {
+    flex: unset;
+  }
+
+  .experience-actions {
+    justify-content: center;
+  }
+}
+@media (max-width: 600px) {
+  .cta-btn {
+    width: 100%;
+    max-width: 280px;
   }
 }
