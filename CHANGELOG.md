@@ -27,11 +27,21 @@ Modification Log - My PortFolio.
 
 # v1.2 — 2025-12-09
 
-*Enhanced overall CSS styling and visual consistency
+* Enhanced overall CSS styling and visual consistency
 
-*Added meaningful and descriptive content across sections
+* Added meaningful and descriptive content across sections
 
-*Deployed a live version of the website using GitHub Pages
+* Deployed a live version of the website using GitHub Pages
+
+# v1.3 — 2025-12-12
+
+* Added 404 Not Found page. 
+
+* Fixed and improved link functionality. 
+
+* Added favicon and updated meta information for better SEO.
+
+* Enhanced documentation throughout the project.
 
 # v1.3 — Future Improvements (Planned)
 
@@ -49,6 +59,3 @@ Modification Log - My PortFolio.
 
 * Further improve responsive design for mobile and tablet devices.
 
-* Adding favicon
-
-* Futher improve footer and link's funtionality 
