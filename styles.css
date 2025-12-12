@@ -1,6 +1,37 @@
-/* =============================
-   Animated Gradient Background
-============================= */
+/* ==============================
+   CSS Root Variables
+============================== */
+:root {
+  /* Colors */
+  --primary-color: #00f5d4;
+  --primary-hover: #00bbf9;
+  --secondary-color: #ff008c;
+  --white-color: #ffffff;
+  --black-color: #000000;
+  --gray-bg: rgba(0, 0, 0, 0.35);
+  --blur-bg: rgba(255, 255, 255, 0.08);
+  --shadow-primary: rgba(0, 245, 212, 0.2);
+  --shadow-secondary: rgba(255, 0, 140, 0.2);
+  --gradient-dark1: #0e0e10;
+  --gradient-dark2: #1a1a24;
+  --gradient-dark3: #2a0034;
+  --accent-pink: #ff2965;
+  --accent-green: #54ffae;
+
+  /* Fonts */
+  --font-main: Arial, sans-serif;
+  --font-mono: monospace;
+  --font-heading: 'Montserrat', sans-serif;
+
+  /* Sizes */
+  --border-radius: 12px;
+  --cta-radius: 18px;
+  --font-small: 14px;
+  --font-medium: 18px;
+  --font-large: 2rem;
+  --font-xlarge: 2.4rem;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -182,6 +213,18 @@ footer {
   backdrop-filter: blur(6px);
   margin-top: auto;
 }
+
+footer a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
 
 /* =============================
    Responsive Design
@@ -553,4 +596,38 @@ footer {
     width: 100%;
     max-width: 280px;
   }
+}
+/* 404 Not Found Section */
+/* 404 Main Section */
+.error-page {
+  text-align: center;
+  padding: 100px 20px;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.error-page h1 {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.error-page h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.error-page p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.error-page .home-link {
+  font-size: 18px;
+  color: #00bfff;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.error-page .home-link:hover {
+  opacity: 0.8;
 }
